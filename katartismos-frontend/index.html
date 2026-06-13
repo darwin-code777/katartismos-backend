@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katartismos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D4AF37">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>KATARTISMOS</h1>
+    </header>
+
+    <nav class="tabs-nav">
+        <button id="btn-chat" class="active" onclick="mudarAba('chat')">Conversas</button>
+        <button id="btn-ia" onclick="mudarAba('ia')">IA Katartismos</button>
+        <button id="btn-exercicios" onclick="mudarAba('exercicios')">Exercícios</button>
+    </nav>
+
+    <main>
+        <section id="aba-chat" class="aba-conteudo active">
+            <div class="card-header">Sala de Restauração (Tempo Real)</div>
+            <div id="historico-chat" class="chat-box"></div>
+            <div class="chat-input-container">
+                <input type="text" id="input-usuario" placeholder="Seu Nome/Apelido">
+                <input type="text" id="input-msg" placeholder="Digite sua mensagem...">
+                <button onclick="enviarMensagemChat()">Enviar</button>
+            </div>
+        </section>
+
+        <section id="aba-ia" class="aba-conteudo">
+            <div class="card-header">Antídotos Contra Paralisia Mental</div>
+            <p style="text-align: center; color: #C0C0C0;">O que está tentando bloquear você hoje? Escolha o alvo:</p>
+            <div class="botoes-gatilhos">
+                <button onclick="consultarIA('duvida')">Dúvida</button>
+                <button onclick="consultarIA('medo')">Medo</button>
+                <button onclick="consultarIA('vergonha')">Vergonha</button>
+                <button onclick="consultarIA('preguiça')">Preguiça</button>
+                <button onclick="consultarIA('raiva')">Raiva</button>
+            </div>
+            <div id="resposta-ia" class="resposta-box">
+                Selecione um gatilho acima para receber o direcionamento...
+            </div>
+        </section>
+
+        <section id="aba-exercicios" class="aba-conteudo">
+            <div class="card-header">Sessão de Alinhamento e Exercícios</div>
+            <div class="exercicios-lista">
+                <div class="exercicio-item">
+                    <h3>1. Alinhamento Mental (Foco Ativo)</h3>
+                    <p>Escreva em um papel 3 metas inegociáveis para as próximas 2 horas. Elimine distrações externas.</p>
+                </div>
+                <div class="exercicio-item">
+                    <h3>2. Ativação Física (Quebra de Inércia)</h3>
+                    <p>Faça 20 polichinelos ou mude de ambiente imediatamente para forçar o cérebro a sair do estado de preguiça.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
